@@ -6,6 +6,7 @@ import React from "react";
 export default function CampusComponent(){
    
  return (
+   
     <Container maxWidth="md" >
 
          Helo World!!!
@@ -48,7 +49,7 @@ export default function CampusComponent(){
             </Grid>
 
          </Paper>
-         
+
     </Container>
  )
     

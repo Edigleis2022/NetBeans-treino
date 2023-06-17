@@ -1,5 +1,5 @@
 import './App.css'
-//import CampusComponent from './campus/CampusComponent'
+import CampusComponent from './campus/CampusComponent'
 import CampusListagemComponent from './campus/CampusListagemComponent'
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <CampusListagemComponent/>
+      <CampusComponent/>
     </>
   )
 }

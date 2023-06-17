@@ -21,7 +21,7 @@ export default function CampusListagemComponent() {
       .catch((error) => { 
         console.log(error)
       });
-  },[nome]);
+  }, [nome]);
 
   return (
     <Container sx={{ p: 3, m: 3 }}>
@@ -34,7 +34,7 @@ export default function CampusListagemComponent() {
             m: 3,
           }}
         >
-          
+
           <TextField 
                 id="nome"
                 fullWidth
