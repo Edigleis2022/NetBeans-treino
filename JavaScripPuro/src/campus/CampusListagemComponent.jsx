@@ -1,15 +1,18 @@
 import { Container, Stack, TextField, Typography } from "@mui/material";
 import React from "react";
 import api, { apiAxios } from "../api/api";
+
+
 export default function CampusListagemComponent() {
   const [dados, setDados] = React.useState([]);
-  const [nome, setNome] = React.useState("")
+  const [nome, setNome] = React.useState("");
+
   const [contagem, setContagem] = React.useState(0);
 
   React.useEffect(() => {
     apiAxios("/campus",
     {"nome": nome})
-      .then((response) => {
+      .then(response => {
         // manipula o sucesso da requisição
         setDados(response.data.content);
         setContagem(response.data.numberOfElements);
