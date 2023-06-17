@@ -4,6 +4,7 @@ import api, { apiAxios } from "../api/api";
 
 
 export default function CampusListagemComponent() {
+
   const [dados, setDados] = React.useState([]);
   const [nome, setNome] = React.useState("");
 
@@ -24,13 +25,16 @@ export default function CampusListagemComponent() {
 
   return (
     <Container sx={{ p: 3, m: 3 }}>
+
       <Paper elevation={2}>
+
         <Box
           sx={{
             p: 3,
             m: 3,
           }}
         >
+          
           <TextField 
                 id="nome"
                 fullWidth
@@ -40,6 +44,7 @@ export default function CampusListagemComponent() {
                 />
           <Typography variant="h3">Consulta de Campi</Typography>
         </Box>
+
         <Stack>
           {dados.map((item) => (
             <Typography variant="subtitle1">
@@ -47,7 +52,10 @@ export default function CampusListagemComponent() {
             </Typography>
           ))}
         </Stack>
+
       </Paper>
+
     </Container>
   );
+
 }
