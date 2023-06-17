@@ -11,7 +11,7 @@ export default function CampusListagemComponent() {
   const [contagem, setContagem] = React.useState(0);
 
   React.useEffect(() => {
-    apiAxios("/campus",
+    apiAxiosGet("/campus",
     {"nome": nome})
       .then(response => {
         // manipula o sucesso da requisição
