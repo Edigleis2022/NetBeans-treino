@@ -1,4 +1,4 @@
-import { Container, Typography } from "@mui/material";
+import { Container, Stack, Typography } from "@mui/material";
 import React from "react";
 import api from "../api/api"
 export default function CampusListagemComponent(){
@@ -25,6 +25,13 @@ console.log(dados);
                         Consulta de Campi
                     </Typography>
                 </Box>
+                <Stack>
+                    {dados.map(item => (
+                        <Typography variant="subtitle1">
+                            {item.nome}
+                        </Typography>
+                    ))}
+                </Stack>
             </Paper>
         </Container>
     )
