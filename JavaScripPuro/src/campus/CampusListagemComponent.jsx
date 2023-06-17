@@ -1,14 +1,14 @@
-import { Container, Stack, Typography } from "@mui/material";
+import { Container, Stack, TextField, Typography } from "@mui/material";
 import React from "react";
-import api from "../api/api";
+import api, { apiAxios } from "../api/api";
 export default function CampusListagemComponent() {
   const [dados, setDados] = React.useState([]);
+  const [nome, setNome] = React.useState("")
   const [contagem, setContagem] = React.useState(0);
 
   React.useEffect(() => {
-    let localUrl = new URL("http://localhost:8080/api/campus");
-    localUrl.search = new URLSearchParams({"nome": nome}).toString();
-    api.get(lcalUrl)
+    apiAxios("/campus",
+    {"nome": nome})
       .then((response) => {
         // manipula o sucesso da requisição
         setDados(response.data.content);
@@ -28,11 +28,20 @@ export default function CampusListagemComponent() {
             m: 3,
           }}
         >
+          <TextField 
+                id="nome"
+                fullWidth
+                value={nome}
+                onChange={(event) => setNome(event.target.value)}
+                label="Digite um nome para pesquisar"
+                />
           <Typography variant="h3">Consulta de Campi</Typography>
         </Box>
         <Stack>
           {dados.map((item) => (
-            <Typography variant="subtitle1">{item.nome}</Typography>
+            <Typography variant="subtitle1">
+              {item.nome}
+            </Typography>
           ))}
         </Stack>
       </Paper>
