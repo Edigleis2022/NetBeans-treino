@@ -5,14 +5,17 @@ export default function CampusListagemComponent() {
   const [dados, setDados] = React.useState({ id: -1, nome: "" });
   const [contagem, setContagem] = React.useState(0);
 
-  React.useEffect(async () => {
-    api.get("/campus/list")
+  React.useEffect(() => {
+    let localUrl = new URL("http://localhost:8080/api/campus");
+    localUrl.search = new URLSearchParams({"nome": nome}).toString();
+    api.get(lcalUrl)
       .then((response) => {
         // manipula o sucesso da requisição
-        setDados(response.data);
+        setDados(response.data.content);
+        setContagem(response.data.numberOfElements);
       })
       .catch((error) => console.log(error));
-  })[contagem, setContagem];
+  },[nome]);
 
   return (
     <Container sx={{ p: 3, m: 3 }}>
