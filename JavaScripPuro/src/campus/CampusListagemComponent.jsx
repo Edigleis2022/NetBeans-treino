@@ -14,7 +14,9 @@ export default function CampusListagemComponent() {
         setDados(response.data.content);
         setContagem(response.data.numberOfElements);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => { 
+        console.log(error)
+      });
   },[nome]);
 
   return (
