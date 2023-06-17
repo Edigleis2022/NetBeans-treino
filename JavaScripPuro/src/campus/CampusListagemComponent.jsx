@@ -2,7 +2,7 @@ import { Container, Stack, Typography } from "@mui/material";
 import React from "react";
 import api from "../api/api";
 export default function CampusListagemComponent() {
-  const [dados, setDados] = React.useState({ id: -1, nome: "" });
+  const [dados, setDados] = React.useState([]);
   const [contagem, setContagem] = React.useState(0);
 
   React.useEffect(() => {
