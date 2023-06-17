@@ -15,13 +15,13 @@ export default function CampusListagemComponent(){
 console.log(dados);
 
     return (
-        <Container sx= {{p:3}}>
-            <Paper elevation={2} sx={{
-            p:3,
-            m:3
-         }} >
-                <Box>
-                    <Typography>
+        <Container sx= {{p:3, m: 3}}>
+            <Paper elevation={2}>
+                <Box sx={{
+                    p:3,
+                    m:3
+                 }} >
+                    <Typography variant="h3">
                         Consulta de Campi
                     </Typography>
                 </Box>
