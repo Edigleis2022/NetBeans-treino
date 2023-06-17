@@ -11,7 +11,7 @@ export default function CampusListagemComponent(){
          }} >
                 <Box>
                     <Typography>
-                        Consultta de Campi
+                        Consulta de Campi
                     </Typography>
                 </Box>
             </Paper>
